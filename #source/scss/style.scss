@@ -4,6 +4,75 @@
 $blue: #115C90;
 $yellow:#EAE8D7;
 
+.popUp {
+	transition: all 0.5s ease 0s;
+	top:-100%;
+	width:90%;
+	padding: 20px 0;
+	position: fixed;
+	border-radius: 10px;
+	right:0;
+	left:0;
+	margin: 0 auto;
+	z-index:51;
+	color:$blue;
+	background: #EAE8da;
+	box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+.container {}
+.popUp__exit{
+	cursor: pointer;
+	position: absolute;
+	top:30px;
+	right:30px;
+	width:28px;
+	height:28px;
+	&:after, &:before{
+		content:'';
+		position: absolute;
+		width:100%;
+		height:2px;
+		background: $blue;
+		top:12px;
+	}
+	&:after{
+		transform:rotate(45deg);
+	}
+	&:before{
+		transform:rotate(-45deg);
+	}
+}
+.popUp__title {
+	text-align: center;
+	font-family: "dm sans";
+	font-size: 50px;
+	line-height: 55px;
+}
+.popUp__image {
+	display: block;	
+	img{
+		width:300px;
+		height:300px;
+
+		object-fit:fill;
+	}
+	max-width:300px;
+	margin: 20px auto;
+}
+.popUp__desc {
+	margin: 0 0 20px 0;
+	text-align: center;
+	font-family: "dm sans";
+	font-size: 30px;
+}
+.popUp__exit__btn {
+	max-width:150px;
+	margin: 0 auto;
+	text-transform: uppercase;
+	background: $blue;
+	color:$yellow;
+}
+
 html{
 	overflow-x:hidden;
 }
@@ -39,6 +108,7 @@ html.lock{
 	align-items:center;
 }
 .burger {
+
 	//position: relative;
 	width:100%;
 	height:auto;
@@ -60,6 +130,7 @@ html.lock{
 	
 }
 .header__burger {
+	cursor: pointer;
 	transition: all 0.2s ease 0.5s;
 	width:30px;
 	height:24px;
@@ -316,9 +387,14 @@ html.lock{
 	color:#0B5E98;
 	background:#EAE8D7;
 	border:2px solid #0B5E98;
-
+	&:hover{
+		color:#EAE8D7;
+		background:#0B5E98;
+	}
 }
 .btn {
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
 	font-family: "dm sans";
 	font-weight: 500;
 	display: block;
@@ -336,6 +412,11 @@ html.lock{
 	letter-spacing: 0.04em;
 	text-align: center;
 	text-transform: uppercase;
+}
+.btn:hover{
+	color:#0B5E98;
+	background:#EAE8D7;
+	border:2px solid #0B5E98;
 }
 // main media //
 
@@ -1423,7 +1504,7 @@ html.lock{
 
 
 .footer {
-	padding:120px 0 0 0;
+	padding:120px 0 30px 0;
 	flex: 0 0 auto;
 	background: $blue;
 	color:$yellow;
@@ -1554,7 +1635,4 @@ html.lock{
 	.header{
 		//padding:10px 0 0 0;
 	}
-}
-.navigation__id{
-	
 }

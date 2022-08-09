@@ -222,6 +222,49 @@ headerLinks.forEach((item,index) => item.addEventListener('click',function(e){
 	
 }));
 
+//popUp
+const popUp = document.querySelector('.popUp');
+const popUpExit = document.querySelector('.popUp__exit')
+const popUpExitBtn = document.querySelector('.popUp__exit__btn')
+const mainBtn = document.querySelectorAll('.main__item-btn');
+const portfolioBtn = document.querySelector('.portfolio__btn');
+const learnBtn = document.querySelector('.launch__btn');
+const headerSearch = document.querySelector('.header__search')
+headerSearch.addEventListener('click', function(){
+	popUp.style.top = '40px';
+	html.classList.add('lock')
+})
+mainBtn.forEach(i => i.addEventListener('click', function(){
+	popUp.style.top = '40px';
+	html.classList.add('lock')
+}))
+portfolioBtn.addEventListener('click', function(){
+	popUp.style.top = '40px';
+	html.classList.add('lock')
+})
+learnBtn.addEventListener('click', function(){
+	popUp.style.top = '40px';
+	html.classList.add('lock')
+})
+//pop up exit
+popUpExit.addEventListener('click', function(){
+	popUp.style.top = '-100%';
+	html.classList.remove('lock')
+	navigation.querySelector('.header__input').value='';
+})
+popUpExitBtn.addEventListener('click', function(){
+	popUp.style.top = '-100%';
+	html.classList.remove('lock')
+	navigation.querySelector('.header__input').value='';
+})
+
+const footerLinks = document.querySelectorAll('.footer__link');
+footerLinks.forEach(i => i.addEventListener('click', function(e){
+	e.preventDefault();
+	popUp.style.top = '40px';
+	html.classList.add('lock')
+}));
+
 
 function init(){
 	transformValue = sliderWidth.clientWidth;
